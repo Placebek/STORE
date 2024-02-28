@@ -1,24 +1,22 @@
-import psycopg2
 
+# class DataAccessor:
+#     def __init__(self) -> None:
+#         pass
 
-class DataAccessor:
-    def __init__(self) -> None:
-        pass
+#     def get_user_by_login_password(self, login, password):
+#         self.connection
 
-    def get_user_by_login_password(self, login, password):
-        self.connection
+#         self.cursor.execute("SELECT * FROM users WHERE login='%s' AND password='%s'"%(login, password))
+#         user = self.cursor.fetchone()
 
-        self.cursor.execute("SELECT * FROM users WHERE login='%s' AND password='%s'"%(login, password))
-        user = self.cursor.fetchone()
-
-        return user
+#         return user
 
 
 import psycopg2
 
 
 class Glavka:
-    def __init__(self, database, user='postgres', password='chydo.chydnoe', host='127.0.0.1', port='5432'):
+    def __init__(self, database, user='postgres', password='Saken.2020', host='localhost', port='5432'):
         self.conn = psycopg2.connect(
             database=database,
             user=user,
@@ -67,7 +65,7 @@ class Data:
 #     def drop(self, table_name):
 
 
-connect = Glavka(database='10-VARIANT')
+connect = Glavka(database='Store_DB')
 
 table_manager = Table(connect)
 data_manager = Data(connect)

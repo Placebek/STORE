@@ -21,3 +21,20 @@ def hello():
             return render_template('index.html', error="")
         else:
             return render_template('index.html', error=text)
+        
+    return render_template('index.html')
+
+@app.route('/register', methods = ['GET', 'POST'])
+def register():
+    if request.method == "POST":
+        login = request.form.get("login")
+        password = request.form.get("password")
+
+        business_logic = BusinessLogic()
+        business_logic.register_user(login, password)
+    
+        
+
+        return redirect('/')
+
+    return render_template('register.html')

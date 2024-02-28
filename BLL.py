@@ -1,8 +1,9 @@
-from DAL import DataAccessor
+# from DAL import DataAccessor
 
 class BusinessLogic:
     def __init__(self) -> None:
-        self.data_accessor = DataAccessor()
+        # self.data_accessor = DataAccessor()
+        pass
 
     def get_user_by_login_password(self, login, password):
         if user:
